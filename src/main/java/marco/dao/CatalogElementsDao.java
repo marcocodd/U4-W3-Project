@@ -4,6 +4,8 @@ import marco.entities.CatalogElement;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class CatalogElementsDao {
 
@@ -36,5 +38,12 @@ public class CatalogElementsDao {
         transaction.commit();
         System.out.println("Elemento con isbn: " + element.getIsbn() + " è stato eliminato");
     }
+
+    public List<CatalogElement> searchByYear(int year) {
+        TypedQuery<CatalogElement> query = em.createNamedQuery("searchByYear", CatalogElement.class);
+        query.setParameter("year", year);
+        return query.getResultList();
+    }
+
 
 }

@@ -1,10 +1,12 @@
 package marco.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "libri")
+@NamedQuery(name = "searchByAuthor", query = "SELECT b FROM Book b WHERE b.author = :author")
 public class Book extends CatalogElement {
     private String author;
     private String genre;

@@ -11,10 +11,10 @@ public class Loan {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "utente_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "cardNumber")
     private User user;
     @OneToOne
-    @JoinColumn(name = "catalog_element_isbn")
+    @JoinColumn(name = "catalog_element_isbn", referencedColumnName = "isbn")
     private CatalogElement catalogElementPrestato;
 
     public Loan(long id, User user, CatalogElement catalogElementPrestato) {

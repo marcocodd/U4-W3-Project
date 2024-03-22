@@ -1,13 +1,11 @@
 package marco.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@NamedQuery(name = "searchByYear", query = "SELECT a FROM CatalogElement a WHERE a.published = :year")
 public abstract class CatalogElement {
     @Id //per ora non lo genero automaticamente per le verifiche successive dei metodi
     protected long isbn;
