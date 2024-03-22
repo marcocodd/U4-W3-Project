@@ -27,6 +27,9 @@ public class User {
         this.birthdate = birthdate;
     }
 
+    public User() {
+    }
+
     public long getCardNumber() {
         return cardNumber;
     }
