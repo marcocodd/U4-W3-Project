@@ -11,13 +11,13 @@ import javax.persistence.InheritanceType;
 public abstract class CatalogElement {
     @Id //per ora non lo genero automaticamente per le verifiche successive dei metodi
     protected long isbn;
-    protected String Title;
+    protected String title;
     protected int published;
     protected int pages;
 
     public CatalogElement(long isbn, String title, int published, int pages) {
         this.isbn = isbn;
-        Title = title;
+        this.title = title;
         this.published = published;
         this.pages = pages;
     }
@@ -31,11 +31,11 @@ public abstract class CatalogElement {
 
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        title = title;
     }
 
     public int getPublished() {
@@ -58,7 +58,7 @@ public abstract class CatalogElement {
     public String toString() {
         return "CatalogElement{" +
                 "isbn=" + isbn +
-                ", Title='" + Title + '\'' +
+                ", Title='" + title + '\'' +
                 ", published=" + published +
                 ", pages=" + pages +
                 '}';

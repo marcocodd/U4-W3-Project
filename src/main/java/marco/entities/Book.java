@@ -5,18 +5,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "libri")
-public class Books extends CatalogElement {
+public class Book extends CatalogElement {
     private String author;
     private String genre;
 
 
-    public Books(long isbn, String title, int published, int pages, String author, String genre) {
+    public Book(long isbn, String title, int published, int pages, String author, String genre) {
         super(isbn, title, published, pages);
         this.author = author;
         this.genre = genre;
     }
 
-    public Books() {
+    public Book() {
     }
 
     public String getAuthor() {
