@@ -15,4 +15,21 @@ public class Magazine extends CatalogElement {
 
     public Magazine() {
     }
+
+    public MagazinePeriodicity getPeriodicity() {
+        return periodicity;
+    }
+
+    public void setPeriodicity(MagazinePeriodicity periodicity) {
+        this.periodicity = periodicity;
+    }
+
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "periodicity=" + periodicity +
+                ", isbn=" + isbn +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

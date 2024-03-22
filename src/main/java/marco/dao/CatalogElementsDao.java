@@ -45,5 +45,12 @@ public class CatalogElementsDao {
         return query.getResultList();
     }
 
+    public List<CatalogElement> searchByPartialTitleOrTitle(String title) {
+        TypedQuery<CatalogElement> query = em.createQuery("SELECT a FROM CatalogElement a WHERE LOWER(a.title) LIKE LOWER(:title) OR LOWER(a.title) = LOWER (:title)", CatalogElement.class);
+
+        query.setParameter("title", title + "%");
+        return query.getResultList();
+    }
+
 
 }

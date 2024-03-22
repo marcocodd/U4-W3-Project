@@ -39,9 +39,13 @@ public class Book extends CatalogElement {
 
     @Override
     public String toString() {
-        return "Books{" +
+        return "Book{" +
                 "author='" + author + '\'' +
                 ", genre='" + genre + '\'' +
+                ", isbn=" + isbn +
+                ", title='" + title + '\'' +
+                ", published=" + published +
                 '}';
     }
+
 }
