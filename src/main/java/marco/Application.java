@@ -60,6 +60,8 @@ public class Application {
         userDao.save(marco);
         userDao.save(gino);
 
+        //inserire così utente e il libro magazine immagino non sia corretto, potrei assegnare ad una variabile l'oggetto tramite findId... ho velocizzato
+        //devo rivedere tutta questa settimana.
 
         Loan prestitoMarco = new Loan(marco, signoreDegliAnelli, LocalDate.of(2024, 3, 22), LocalDate.of(2024, 3, 31));
         Loan prestitoMarco2 = new Loan(marco, libroAcaso, LocalDate.of(2024, 3, 10), LocalDate.of(2024, 4, 10));
