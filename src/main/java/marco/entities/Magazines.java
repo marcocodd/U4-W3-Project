@@ -1,4 +1,4 @@
-package marco;
+package marco.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

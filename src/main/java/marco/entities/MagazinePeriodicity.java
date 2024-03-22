@@ -1,4 +1,4 @@
-package marco;
+package marco.entities;
 
 public enum MagazinePeriodicity {
     WEEKLY,
