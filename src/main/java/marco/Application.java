@@ -93,7 +93,9 @@ public class Application {
         System.out.println(" ");
         System.out.println("ricerca elementi catalogo prestati per cardNumber");
         loanDao.searchLoansByUserCardNumber(11).forEach(System.out::println);
+        System.out.println(" ");
+        System.out.println("Prestiti scaduti:");
+        loanDao.searchNoReturnedLoansByDate().forEach(System.out::println);
 
-        
     }
 }

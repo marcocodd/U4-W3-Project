@@ -18,9 +18,12 @@ public class Loan {
     @JoinColumn(name = "catalog_element_isbn", referencedColumnName = "isbn")
     private CatalogElement catalogElementPrestato;
 
+    @JoinColumn(name = "data_inizio_prestito")
     private LocalDate loanDate;
+    @JoinColumn(name = "data_prevista_fine_prestito")
     private LocalDate returnLoanDate;
 
+    @JoinColumn(name = "data_restituzione")
     private LocalDate endLoanDate;
 
 
@@ -75,12 +78,16 @@ public class Loan {
         this.endLoanDate = endLoanDate;
     }
 
+
     @Override
     public String toString() {
         return "Loan{" +
                 "id=" + id +
                 ", user=" + user +
                 ", catalogElementPrestato=" + catalogElementPrestato +
+                ", loanDate=" + loanDate +
+                ", returnLoanDate=" + returnLoanDate +
+                ", endLoanDate=" + endLoanDate +
                 '}';
     }
 }

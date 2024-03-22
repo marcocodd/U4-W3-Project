@@ -5,6 +5,7 @@ import marco.entities.Loan;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.List;
 
 public class LoanDao {
@@ -28,5 +29,13 @@ public class LoanDao {
         query.setParameter("cardNumber", cardNumber);
         return query.getResultList();
 
+    }
+
+    public List<Loan> searchNoReturnedLoansByDate() {    // sicuro questa è da rivedere...
+        LocalDate today = LocalDate.now();
+
+        TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l WHERE l.endLoanDate < :today", Loan.class);
+        query.setParameter("today", today);
+        return query.getResultList();
     }
 }
